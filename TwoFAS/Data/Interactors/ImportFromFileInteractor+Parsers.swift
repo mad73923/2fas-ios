@@ -270,11 +270,11 @@ extension ImportFromFileInteractor {
                     return .brand
                 }()
                 return ServiceData(
-                    name: entry.name.sanitazeName(),
+                    name: entry.issuer,
                     secret: secret,
                     serviceTypeID: serviceDef?.serviceTypeID,
                     additionalInfo: entry.note?.sanitizeInfo(),
-                    rawIssuer: entry.issuer,
+                    rawIssuer: entry.name.sanitazeName(),
                     modifiedAt: date,
                     createdAt: date,
                     tokenPeriod: period,
